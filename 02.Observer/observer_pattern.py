@@ -7,7 +7,7 @@ class Observable(abc.ABC):
     def __subclasshook__(cls, subclass):
         """Check whether a class implements this interface"""
         interface_methods = ["add_observer", "remove_observer",
-                             "notify_observers", "set_changed"]
+                             "notify_observers"]
         for method in interface_methods:
             if not (hasattr(subclass, method) and
                     callable(eval("subclass." + method))):
