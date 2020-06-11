@@ -2,7 +2,7 @@ import abc
 
 
 class FlyBehavior(abc.ABC):
-    """Represents flying behavior of a Duck object"""
+    """Represents flying behavior interface for a Duck object"""
     @classmethod
     def __subclasshook__(cls, subclass):
         return (hasattr(subclass, "fly") and
@@ -32,7 +32,7 @@ class FlyNoFly(FlyBehavior):
 
 
 class Duck(abc.ABC):
-    """Represents a base class for Ducks"""
+    """Represents an interface for Ducks"""
     def __init__(self, fb):
         """Initialize a Duck object"""
         self.fly_behavior = fb
